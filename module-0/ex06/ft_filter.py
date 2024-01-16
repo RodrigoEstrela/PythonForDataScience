@@ -14,6 +14,3 @@ def ft_filter(func, iterable):
 
     except TypeError:
         print("First arg must be a function and Second arg an iterable")
-
-
-print(list(ft_filter(lambda x: len(x) > 99, "Hello the world".split())))

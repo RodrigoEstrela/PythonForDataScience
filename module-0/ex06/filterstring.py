@@ -9,12 +9,16 @@ def main():
     Outputs the words in S that have a length greater than N.
     """
     try:
-        assert len(sys.argv) - 1 != 2, "the arguments are bad"
-        assert isinstance(sys.argv[1], str) \
-               or isinstance(sys.argv[2], int), "the arguments are bad"
+        assert len(sys.argv) - 1 == 2, "the arguments are bad"
+        assert isinstance(sys.argv[1], str), "the arguments are bad"
+        length = int(sys.argv[2])
+        words = [word for word in sys.argv[1].split()]
+        print(list(ft_filter(lambda x: len(x) > length, words)))
 
-    except AssertionError:
-        print(AssertionError)
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
+    except ValueError:
+        print("AssertionError: the arguments are bad")
 
 
 if __name__ == "__main__":
